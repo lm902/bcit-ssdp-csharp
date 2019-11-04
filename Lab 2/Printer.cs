@@ -16,7 +16,7 @@ namespace Lab_2
         }
 
         public static void PrintAssignmentGrades(Assignment assignment, IEnumerable<Grade> grades) {
-            var filteredGrades = from grade in grades where grade.Assignment == assignment select grade.Student.FullName + '\t' + grade.StudentTotal;
+            var filteredGrades = from grade in grades where grade.Assignment == assignment select grade.Student.FullName + '\t' + grade.StudentTotal + '/' + grade.Assignment.Total;
             Console.WriteLine("FullName\tStudentTotal");
             Console.WriteLine(string.Join("\n", filteredGrades));
         }
@@ -24,7 +24,7 @@ namespace Lab_2
         public static void PrintAssignmentStudentGrade(Grade grade)
         {
             Console.WriteLine("FullName(StudentID)\tAssignmentName\tStudentTotal");
-            Console.WriteLine(grade.Student.FullName + '(' + grade.Student.StudentID + ')' + '\t' + grade.Assignment.AssignmentName + '\t' + grade.StudentTotal);
+            Console.WriteLine(grade.Student.FullName + '(' + grade.Student.StudentID + ')' + '\t' + grade.Assignment.AssignmentName + '\t' + grade.StudentTotal + '/' + grade.Assignment.Total);
         }
     }
 }
