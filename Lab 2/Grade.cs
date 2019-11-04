@@ -24,7 +24,7 @@ namespace Lab_2
             {
                 if (this.Assignment == null)
                 {
-                    throw new MemberAccessException("Assignment must be set before student total");
+                    throw new NullReferenceException("Assignment must be set before student total");
                 }
                 if (value > Assignment.Total || 0 > value)
                 {
