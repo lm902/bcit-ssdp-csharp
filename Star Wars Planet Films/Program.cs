@@ -9,6 +9,8 @@ namespace ConsoleApp1
 {
     class Program
     {
+        static Dictionary<string, string> cache = new Dictionary<string, string>();
+
         static void Main(string[] args)
         {
             var listener = new HttpListener();
@@ -62,8 +64,18 @@ namespace ConsoleApp1
 
         static async Task<T> DownloadJsonAsync<T>(string uri)
         {
-            Console.WriteLine("Download: " + uri);
-            var t = await new WebClient().DownloadStringTaskAsync(uri);
+            string t;
+            if (cache.ContainsKey(uri))
+            {
+                Console.WriteLine("From cache: " + uri);
+                t = cache[uri];
+            }
+            else
+            {
+                Console.WriteLine("Download: " + uri);
+                t = await new WebClient().DownloadStringTaskAsync(uri);
+                cache[uri] = t;
+            }
             return JsonConvert.DeserializeObject<T>(t);
         }
 
