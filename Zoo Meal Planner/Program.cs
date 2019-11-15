@@ -31,8 +31,8 @@ namespace Zoo_Meal_Planner
             Console.WriteLine($"Weight: {weight} KG");
             Console.WriteLine($"Serving: {mammal.ServingWeightRatio * weight + " KG " + string.Join(", ", mammal.FoodPreference)}");
             Console.WriteLine($"Instructions:\r\n\tKeep area secure at all times.\r\n\tFeed at {mammal.FeedTime}.");
-            Console.WriteLine($"Press any key to exit.");
-            Console.ReadKey();
+            Console.WriteLine();
+            Main(args);
         }
     }
 }
