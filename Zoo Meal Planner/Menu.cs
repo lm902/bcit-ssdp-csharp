@@ -25,7 +25,7 @@ namespace Zoo_Meal_Planner
 
             var bearSelections = new Dictionary<string, object>();
             bearSelections.Add("Black", new Black());
-            bearSelections.Add("Black", new Polar());
+            bearSelections.Add("Polar", new Polar());
             var bearMenu = new MenuPage
             {
                 title = "Species",
