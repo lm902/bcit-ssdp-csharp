@@ -8,6 +8,6 @@ namespace Zoo_Meal_Planner.Model
 {
     class Colobus : Monkey
     {
-        public override decimal ServingWeightRatio => 0.008;
+        public override decimal ServingWeightRatio => 0.008M;
     }
 }
