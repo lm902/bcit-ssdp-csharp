@@ -21,15 +21,16 @@ namespace Zoo_Meal_Planner
                 {
                     break;
                 }
+                Console.WriteLine("Invalid weight, please try again.");
             }
             Console.WriteLine("Meal Recommendation");
             Console.WriteLine("————————————————————");
-            Console.WriteLine("Mammal Type: %s", mammal.GetType().BaseType.Name);
-            Console.WriteLine("Species: %s", mammal.GetType().Name);
-            Console.WriteLine("Weight: %s", weight + " KG");
-            Console.WriteLine("Serving: %s", mammal.ServingWeightRatio * weight + " KG " + string.Join(", ", mammal.FoodPreference));
-            Console.WriteLine("Instructions:\r\n\tKeep area secure at all times.\r\n\tFeed at %s.", mammal.FeedTime);
-            Console.WriteLine("Press any key to exit.");
+            Console.WriteLine($"Mammal Type: {mammal.GetType().BaseType.Name}");
+            Console.WriteLine($"Species: {mammal.GetType().Name}");
+            Console.WriteLine($"Weight: {weight} KG");
+            Console.WriteLine($"Serving: {mammal.ServingWeightRatio * weight + " KG " + string.Join(", ", mammal.FoodPreference)}");
+            Console.WriteLine($"Instructions:\r\n\tKeep area secure at all times.\r\n\tFeed at {mammal.FeedTime}.");
+            Console.WriteLine($"Press any key to exit.");
             Console.ReadKey();
         }
     }
