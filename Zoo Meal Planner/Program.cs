@@ -23,6 +23,7 @@ namespace Zoo_Meal_Planner
                 }
                 Console.WriteLine("Invalid weight, please try again.");
             }
+            Console.WriteLine();
             Console.WriteLine("Meal Recommendation");
             Console.WriteLine("————————————————————");
             Console.WriteLine($"Mammal Type: {mammal.GetType().BaseType.Name}");

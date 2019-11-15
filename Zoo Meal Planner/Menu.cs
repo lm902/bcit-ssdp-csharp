@@ -59,6 +59,7 @@ namespace Zoo_Meal_Planner
             {
                 Console.Write("Selection: ");
                 var selection = Console.ReadLine();
+                Console.WriteLine();
                 if (int.TryParse(selection, out int input))
                 {
                     if (input > 0 && input <= keys.Count)
